@@ -1,0 +1,13 @@
+min_version = "2026.10.0"
+
+[tools]
+herdr = "latest"
+
+[dotfiles."~/.config/herdr/config.toml"]
+source = "config.toml"
+mode = "copy"
+variants = [
+  { os = "linux" },
+  { os = "macos" },
+  { os = "windows", target = "~/AppData/Roaming/herdr/config.toml" },
+]
