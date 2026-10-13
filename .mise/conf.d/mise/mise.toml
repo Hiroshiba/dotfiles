@@ -1,0 +1,5 @@
+min_version = "2026.10.0"
+
+[dotfiles."~/.config/mise/conf.d/settings.toml"]
+source = "settings.toml"
+mode = "copy"

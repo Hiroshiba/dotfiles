@@ -2,6 +2,7 @@
 
 macOS・Windows・WSL向けの個人設定をmiseで管理する。
 各環境でその環境のmiseを実行し、対応する設定を反映する。
+リリースの採用に1週間の待機期間を設定し、mise自身の自動更新も有効にする。
 
 ## 導入
 
@@ -9,7 +10,6 @@ mise 2026.10.0以上を用意し、リポジトリをローカルディスクに
 必要な既存設定は原本へ取り込んでから配置する。
 
 ```text
-mise settings auto_update=true
 mise trust
 mise bootstrap --dry-run
 mise bootstrap

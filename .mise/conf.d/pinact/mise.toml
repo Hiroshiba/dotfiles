@@ -1,0 +1,13 @@
+min_version = "2026.10.0"
+
+[tools]
+pinact = "latest"
+
+[dotfiles."~/.config/pinact/pinact.yaml"]
+source = "pinact.yaml"
+mode = "copy"
+variants = [
+  { os = "linux" },
+  { os = "macos" },
+  { os = "windows", target = "~/AppData/Roaming/pinact/pinact.yaml" },
+]

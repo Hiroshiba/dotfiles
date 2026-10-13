@@ -1,0 +1,13 @@
+min_version = "2026.10.0"
+
+[tools]
+uv = "latest"
+
+[dotfiles."~/.config/uv/uv.toml"]
+source = "uv.toml"
+mode = "copy"
+variants = [
+  { os = "linux" },
+  { os = "macos" },
+  { os = "windows", target = "~/AppData/Roaming/uv/uv.toml" },
+]

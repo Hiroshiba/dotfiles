@@ -1,0 +1,13 @@
+min_version = "2026.10.0"
+
+[tools]
+pnpm = "10"
+
+[dotfiles."~/.config/pnpm/rc"]
+source = "rc"
+mode = "copy"
+variants = [
+  { os = "linux" },
+  { os = "macos", target = "~/Library/Preferences/pnpm/rc" },
+  { os = "windows", target = "~/AppData/Local/pnpm/config/rc" },
+]

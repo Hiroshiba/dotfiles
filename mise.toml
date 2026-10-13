@@ -1,5 +1,21 @@
 min_version = "2026.10.0"
 
+[dotfiles."~/.config/mise/conf.d/mise"]
+source = ".mise/conf.d/mise"
+mode = "symlink"
+
+[dotfiles."~/.config/mise/conf.d/pinact"]
+source = ".mise/conf.d/pinact"
+mode = "symlink"
+
+[dotfiles."~/.config/mise/conf.d/pnpm"]
+source = ".mise/conf.d/pnpm"
+mode = "symlink"
+
+[dotfiles."~/.config/mise/conf.d/uv"]
+source = ".mise/conf.d/uv"
+mode = "symlink"
+
 [dotfiles."~/.config/mise/conf.d/wezterm"]
 source = ".mise/conf.d/wezterm"
 mode = "symlink"
