@@ -1,0 +1,6 @@
+min_version = "2026.10.0"
+
+[dotfiles."~/.wezterm.lua"]
+source = "wezterm.lua"
+mode = "copy"
+variants = [{ os = "macos" }, { os = "windows" }]

@@ -1,0 +1,6 @@
+min_version = "2026.10.0"
+
+[dotfiles."~/.config/mise/conf.d/wezterm"]
+source = ".mise/conf.d/wezterm"
+mode = "symlink"
+variants = [{ os = "macos" }, { os = "windows" }]
