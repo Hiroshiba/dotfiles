@@ -9,6 +9,11 @@ macOS・Windows・WSL向けの個人設定をmiseで管理する。
 mise 2026.10.0以上を用意し、リポジトリをローカルディスクに取得する。
 必要な既存設定は原本へ取り込んでから配置する。
 
+暗号化ファイルを利用する環境では、Google Driveに保存した`miseのdotfilesの秘密鍵.txt`を`~/.config/mise/`へ配置する。
+秘密鍵は各環境で共用し、公開鍵と暗号化ファイルをこのリポジトリで管理する。
+macOS・WSLでは配置時に秘密鍵の権限を`600`に整える。
+暗号化ファイルの名前やコード内の参照名には、内容と無関係な名前を使う。
+
 ```text
 mise trust
 mise bootstrap --dry-run
@@ -18,13 +23,12 @@ mise bootstrap
 ## 更新
 
 設定の編集は`.mise/conf.d`内の原本で行う。
+設定内容が同じ場合は原本を共用し、OSごとの配置先を`variants`で指定する。
 リポジトリを更新した後、各環境でリポジトリ直下から実行する。
 
 ```text
-mise dot apply
+mise bootstrap
 ```
-
-導入用の配置定義を変更したときやリポジトリを移動したときは、`mise bootstrap`を再実行する。
 
 miseで宣言できる処理は設定に書く。
 独自処理が必要になった場合は`[tasks.bootstrap]`からuvでPythonを実行する。

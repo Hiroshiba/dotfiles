@@ -24,3 +24,6 @@ mode = "symlink"
 source = ".mise/conf.d/wezterm"
 mode = "symlink"
 variants = [{ os = "macos" }, { os = "windows" }]
+
+[tasks.bootstrap]
+depends = ["herdr:setup"]

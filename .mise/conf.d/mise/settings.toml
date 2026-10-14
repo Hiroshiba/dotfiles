@@ -1,3 +1,6 @@
 [settings]
 auto_update = true
 minimum_release_age = "7d"
+
+[settings.age]
+key_file = "~/.config/mise/miseのdotfilesの秘密鍵.txt"

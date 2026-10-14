@@ -1,0 +1,19 @@
+id = "local.round-robin-sound"
+name = "シャッフル通知音"
+version = "0.3.1"
+min_herdr_version = "0.8.0"
+description = "6本の通知音を1周ごとにランダムな順番で再生する"
+platforms = ["linux", "macos"]
+
+[[events]]
+on = "pane.agent_status_changed"
+command = ["uv", "run", "--no-project", "--python", "3.12", "play.py", "event"]
+
+[[events]]
+on = "pane.closed"
+command = ["uv", "run", "--no-project", "--python", "3.12", "play.py", "event"]
+
+[[actions]]
+id = "play-next"
+title = "次の通知音を再生"
+command = ["uv", "run", "--no-project", "--python", "3.12", "play.py", "manual"]

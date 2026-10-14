@@ -2,3 +2,7 @@
 /.aws/
 /.codex/
 /hiho*
+__pycache__/
+*.mp3
+*.wav
+miseのdotfilesの秘密鍵.txt

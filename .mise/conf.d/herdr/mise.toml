@@ -1,6 +1,7 @@
 min_version = "2026.10.0"
 
 [tools]
+age = "latest"
 herdr = "latest"
 
 [dotfiles."~/.config/herdr/config.toml"]
@@ -11,3 +12,25 @@ variants = [
   { os = "macos" },
   { os = "windows", target = "~/AppData/Roaming/herdr/config.toml" },
 ]
+
+[dotfiles."~/.config/herdr/round-robin-sound/herdr-plugin.toml"]
+source = "plugin/herdr-plugin.toml"
+mode = "copy"
+variants = [{ os = "linux" }, { os = "macos" }]
+
+[dotfiles."~/.config/herdr/round-robin-sound/play.py"]
+source = "plugin/play.py"
+mode = "copy"
+variants = [{ os = "linux" }, { os = "macos" }]
+
+[tasks."herdr:setup"]
+description = "通知プラグインと音声を配置する"
+run = "uv run --no-project --python 3.12 setup.py apply"
+
+[tasks."herdr:check-audio"]
+description = "暗号化した音声と配置済みの音声を照合する"
+run = "uv run --no-project --python 3.12 setup.py check"
+
+[tasks."herdr:encrypt-audio"]
+description = "配置済みの音声を公開鍵で暗号化する"
+run = "uv run --no-project --python 3.12 setup.py encrypt"
