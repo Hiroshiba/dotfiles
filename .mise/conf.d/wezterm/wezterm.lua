@@ -16,14 +16,16 @@ config.font = wezterm.font { family = 'PlemolJP' }
 config.font_size = 11.0
 
 -- キー設定
-config.keys = {
-  -- ctrl+vでペースト
-  {
-    key = "v",
-    mods = "CTRL",
-    action = wezterm.action.PasteFrom("Clipboard"),
-  },
-}
+-- macOSではCodex CLIにctrl+vを渡すため、ペーストへの割り当てはWindowsに限定する
+if wezterm.target_triple:find("windows") then
+  config.keys = {
+    {
+      key = "v",
+      mods = "CTRL",
+      action = wezterm.action.PasteFrom("Clipboard"),
+    },
+  }
+end
 
 -- return
 return config
