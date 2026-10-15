@@ -1,0 +1,48 @@
+app:
+  alwaysOnTop: true
+
+hotkeys:
+  toggleRecording:
+    windows: Control+Shift+D
+    macos: Command+Shift+D
+
+recording:
+  autoStopSeconds: 900
+
+transcription:
+  provider: gemini
+  gemini:
+    apiKey: {{ vars.hiho_cli_audio_gemini_api_key | json_encode() }}
+    model: gemini-3.5-transcribe
+  language: ja-JP
+  mode: verbatim
+  customVocabulary:
+    - ultrathink
+    - Claude Code
+    - CLAUDE.md
+    - Codex
+    - AGENTS.md
+    - ヒホ
+    - ChatGPT
+    - VOICEVOX
+    - Hiroshiba
+
+history:
+  maxItems: 10
+
+windows:
+  status:
+    initialPosition: top-right-offset
+  history:
+    narrow: true
+
+herdr:
+{% if os() == "windows" %}
+  windows:
+    wslDistribution: Ubuntu
+    wslUser: hihok
+    binaryPath: $HOME/.local/share/mise/installs/herdr/latest/herdr
+{% elif os() == "macos" %}
+  macos:
+    binaryPath: {{ [env.HOME, ".local", "share", "mise", "shims", "herdr"] | join_path | json_encode() }}
+{% endif %}

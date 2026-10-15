@@ -2,6 +2,7 @@
 /.aws/
 /.codex/
 /hiho*
+!/.mise/conf.d/hiho-cli-audio/
 __pycache__/
 *.mp3
 *.wav
