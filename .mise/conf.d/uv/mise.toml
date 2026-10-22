@@ -1,4 +1,4 @@
-min_version = "2026.10.0"
+min_version = "2026.10.17"
 
 [tools]
 uv = "latest"
@@ -10,4 +10,13 @@ variants = [
   { os = "linux" },
   { os = "macos" },
   { os = "windows", target = "~/AppData/Roaming/uv/uv.toml" },
+]
+
+[dotfiles."~/.config/uv/.python-version"]
+source = ".python-version"
+mode = "copy"
+variants = [
+  { os = "linux" },
+  { os = "macos" },
+  { os = "windows", target = "~/AppData/Roaming/uv/.python-version" },
 ]

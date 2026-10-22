@@ -1,4 +1,4 @@
-min_version = "2026.10.0"
+min_version = "2026.10.17"
 
 [dotfiles."~/.config/mise/conf.d/herdr"]
 source = ".mise/conf.d/herdr"
