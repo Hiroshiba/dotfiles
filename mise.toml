@@ -1,5 +1,9 @@
 min_version = "2026.10.17"
 
+[dotfiles."~/.config/mise/conf.d/gh"]
+source = ".mise/conf.d/gh"
+mode = "symlink"
+
 [dotfiles."~/.config/mise/conf.d/herdr"]
 source = ".mise/conf.d/herdr"
 mode = "symlink"
